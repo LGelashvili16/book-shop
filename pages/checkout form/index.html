@@ -5,9 +5,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Checkout Form</title>
+    <title>Checkout</title>
   </head>
   <body>
-    <script src="./form.js"></script>
+
+    <div class="confirmed">
+      <div class="confirmed-header">
+        <h2>Order Confirmed!</h2>
+        <hr>
+      </div>
+      <div class="confirmed-info">
+        <h3>The delivery address is:</h3>
+        <p class="delivery-info"></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="heading">
+        <h1>Checkout</h1>
+      </div>
+      <hr />
+
+      <form action="" method="get" id="form-user" novalidate>
+        <div class="input-box error" data-errormsg="">
+          <label for="input-first">Name</label>
+          <input type="text" name="input-first" id="input-first" minlength="4" pattern="[a-zA-z]+" required/>
+        </div>
+
+        <div class="input-box" data-errormsg="">
+          <label for="input-surname">Surname</label>
+          <input type="text" name="input-surname" id="input-surname" minlength="5" pattern="^[a-zA-z]+" required/>
+        </div>
+
+        <div class="input-box" data-errormsg="">
+          <label for="input-date">Delivery date</label>
+          <input type="date" name="input-date" id="input-date" min="" required/>
+        </div>
+
+        <div class="input-box" data-errormsg="">
+          <label for="input-street">Street</label>
+          <input type="text" name="input-street" id="input-street" minlength="5" required/>
+        </div>
+
+        <div class="input-box" data-errormsg="">
+          <label for="input-house">House number</label>
+          <input type="text" name="input-house" id="input-house" pattern="\d+" required/>
+        </div>
+
+        <div class="input-box" data-errormsg="">
+          <label for="input-flat">Flat number</label>
+          <input type="text" name="input-flat" id="input-flat" pattern="\d+-\d+|\d+/\d+|\d+" required/>
+        </div>
+
+        <div class="input-box radio" data-errormsg="">
+          <h3>Choose the payment type:</h3>
+          <label for="cash">Cash</label>
+          <input
+            type="radio"
+            name="radio"
+            id="cash"
+            class="radio-btn"
+            required="required"
+          />
+          <label for="card">Card</label>
+          <input
+            type="radio"
+            name="radio"
+            id="card"
+            class="radio-btn"
+            required="required"
+          />
+        </div>
+
+        <div class="input-box checkbox" data-errormsg="">
+          <h3>Choose 2 gifts:</h3>
+          <input
+            type="checkbox"
+            name="chk"
+            id="gift-pack"
+            class="chkbox"
+            onclick="return limitCheckbox()"
+          />
+          <label for="gift-pack">Pack as a gift</label>
+          <br />
+          <input
+            type="checkbox"
+            name="chk"
+            id="postcard"
+            class="chkbox"
+            onclick="return limitCheckbox()"
+          />
+          <label for="postcard">Add postcard</label>
+          <br />
+          <input
+            type="checkbox"
+            name="chk"
+            id="discount"
+            class="chkbox"
+            onclick="return limitCheckbox()"
+          />
+          <label for="discount">Provide 2% discount to the next time</label>
+          <br />
+          <input
+            type="checkbox"
+            name="chk"
+            id="pen-pencil"
+            class="chkbox"
+            onclick="return limitCheckbox()"
+          />
+          <label for="pen-pencil">Branded pen or pencil</label>
+        </div>
+
+        <input
+          type="submit"
+          value="Complete"
+          id="button-submit"
+          class="complete"
+          disabled
+        />
+      </form>
+    </div>
+    <script src="./script.js"></script>
   </body>
 </html>

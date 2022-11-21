@@ -76,6 +76,9 @@ total.innerText = `Total: $${totalPrice}`;
 
 const checkoutBtn = document.createElement('button');
 checkoutBtn.innerText = 'Checkout';
+checkoutBtn.addEventListener('click', function () {
+  window.open('../checkout form/index.html');
+})
 
 dropDownTextArea.appendChild(total);
 dropDownTextArea.appendChild(checkoutBtn);
